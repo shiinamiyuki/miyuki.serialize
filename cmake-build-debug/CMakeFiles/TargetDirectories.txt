@@ -1,0 +1,3 @@
+C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/test.dir
+C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/edit_cache.dir

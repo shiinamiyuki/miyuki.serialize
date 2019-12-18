@@ -1,0 +1,348 @@
+The system is: Windows - 10.0.18362 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/msys64/mingw64/bin/clang.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+
+The C compiler identification is Clang, found in "C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/msys64/mingw64/bin/clang++.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+
+The CXX compiler identification is Clang, found in "C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_abf0e/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_abf0e.dir\build.make CMakeFiles/cmTC_abf0e.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_abf0e.dir/testCCompiler.c.obj
+C:\msys64\mingw64\bin\clang.exe    -o CMakeFiles\cmTC_abf0e.dir\testCCompiler.c.obj   -c C:\Users\xiaoc\CLionProjects\miyuki.serialize\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+Linking C executable cmTC_abf0e.exe
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_abf0e.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_abf0e.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_abf0e.dir/objects.a @CMakeFiles\cmTC_abf0e.dir\objects1.rsp
+C:\msys64\mingw64\bin\clang.exe      -Wl,--whole-archive CMakeFiles\cmTC_abf0e.dir/objects.a -Wl,--no-whole-archive  -o cmTC_abf0e.exe -Wl,--out-implib,libcmTC_abf0e.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_abf0e.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_ef516/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_ef516.dir\build.make CMakeFiles/cmTC_ef516.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ef516.dir/CMakeCCompilerABI.c.obj
+C:\msys64\mingw64\bin\clang.exe   -v -o CMakeFiles\cmTC_ef516.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c"
+clang version 8.0.0 (tags/RELEASE_800/final)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:\msys64\mingw64\bin
+ "C:\\msys64\\mingw64\\bin\\clang.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -momit-leaf-frame-pointer -v -coverage-notes-file "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp\\CMakeFiles\\cmTC_ef516.dir\\CMakeCCompilerABI.c.gcno" -resource-dir "C:\\msys64\\mingw64\\lib\\clang\\8.0.0" -internal-isystem "C:\\msys64\\mingw64\\lib\\clang\\8.0.0\\include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include" -internal-isystem "C:\\msys64\\mingw64\\include" -fdebug-compilation-dir "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fno-use-cxa-atexit -fobjc-runtime=gcc -fseh-exceptions -fdiagnostics-show-option -o "CMakeFiles\\cmTC_ef516.dir\\CMakeCCompilerABI.c.obj" -x c "C:\\Program Files\\JetBrains\\CLion 2019.2.5\\bin\\cmake\\win\\share\\cmake-3.15\\Modules\\CMakeCCompilerABI.c" -faddrsig
+clang -cc1 version 8.0.0 based upon LLVM 8.0.0 default target x86_64-w64-windows-gnu
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32/sys-root/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ C:\msys64\mingw64\lib\clang\8.0.0\include
+ C:\msys64\mingw64\x86_64-w64-mingw32\include
+ C:\msys64\mingw64\include
+End of search list.
+Linking C executable cmTC_ef516.exe
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_ef516.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_ef516.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_ef516.dir/objects.a @CMakeFiles\cmTC_ef516.dir\objects1.rsp
+C:\msys64\mingw64\bin\clang.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_ef516.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ef516.exe -Wl,--out-implib,libcmTC_ef516.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+clang version 8.0.0 (tags/RELEASE_800/final)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:\msys64\mingw64\bin
+ "C:\\msys64\\mingw64\\bin\\ld" -m i386pep -Bdynamic -o cmTC_ef516.exe "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o" "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o" "-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib" "-LC:\\msys64\\mingw64\\lib" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib" --whole-archive "CMakeFiles\\cmTC_ef516.dir/objects.a" --no-whole-archive --out-implib libcmTC_ef516.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o"
+mingw32-make.exe[1]: Leaving directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [C:/msys64/mingw64/lib/clang/8.0.0/include]
+    add: [C:/msys64/mingw64/x86_64-w64-mingw32/include]
+    add: [C:/msys64/mingw64/include]
+  end of search list found
+  collapse include dir [C:/msys64/mingw64/lib/clang/8.0.0/include] ==> [C:/msys64/mingw64/lib/clang/8.0.0/include]
+  collapse include dir [C:/msys64/mingw64/x86_64-w64-mingw32/include] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/include]
+  collapse include dir [C:/msys64/mingw64/include] ==> [C:/msys64/mingw64/include]
+  implicit include dirs: [C:/msys64/mingw64/lib/clang/8.0.0/include;C:/msys64/mingw64/x86_64-w64-mingw32/include;C:/msys64/mingw64/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_ef516/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_ef516.dir\build.make CMakeFiles/cmTC_ef516.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_ef516.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [C:\msys64\mingw64\bin\clang.exe   -v -o CMakeFiles\cmTC_ef516.dir\CMakeCCompilerABI.c.obj   -c "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\share\cmake-3.15\Modules\CMakeCCompilerABI.c"]
+  ignore line: [clang version 8.0.0 (tags/RELEASE_800/final)]
+  ignore line: [Target: x86_64-w64-windows-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:\msys64\mingw64\bin]
+  ignore line: [ "C:\\msys64\\mingw64\\bin\\clang.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -momit-leaf-frame-pointer -v -coverage-notes-file "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp\\CMakeFiles\\cmTC_ef516.dir\\CMakeCCompilerABI.c.gcno" -resource-dir "C:\\msys64\\mingw64\\lib\\clang\\8.0.0" -internal-isystem "C:\\msys64\\mingw64\\lib\\clang\\8.0.0\\include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include" -internal-isystem "C:\\msys64\\mingw64\\include" -fdebug-compilation-dir "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fno-use-cxa-atexit -fobjc-runtime=gcc -fseh-exceptions -fdiagnostics-show-option -o "CMakeFiles\\cmTC_ef516.dir\\CMakeCCompilerABI.c.obj" -x c "C:\\Program Files\\JetBrains\\CLion 2019.2.5\\bin\\cmake\\win\\share\\cmake-3.15\\Modules\\CMakeCCompilerABI.c" -faddrsig]
+  ignore line: [clang -cc1 version 8.0.0 based upon LLVM 8.0.0 default target x86_64-w64-windows-gnu]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32/sys-root/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ C:\msys64\mingw64\lib\clang\8.0.0\include]
+  ignore line: [ C:\msys64\mingw64\x86_64-w64-mingw32\include]
+  ignore line: [ C:\msys64\mingw64\include]
+  ignore line: [End of search list.]
+  ignore line: [Linking C executable cmTC_ef516.exe]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_ef516.dir\link.txt --verbose=1]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_ef516.dir/objects.a]
+  ignore line: [C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_ef516.dir/objects.a @CMakeFiles\cmTC_ef516.dir\objects1.rsp]
+  ignore line: [C:\msys64\mingw64\bin\clang.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_ef516.dir/objects.a -Wl,--no-whole-archive  -o cmTC_ef516.exe -Wl,--out-implib,libcmTC_ef516.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [clang version 8.0.0 (tags/RELEASE_800/final)]
+  ignore line: [Target: x86_64-w64-windows-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:\msys64\mingw64\bin]
+  link line: [ "C:\\msys64\\mingw64\\bin\\ld" -m i386pep -Bdynamic -o cmTC_ef516.exe "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o" "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o" "-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib" "-LC:\\msys64\\mingw64\\lib" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib" --whole-archive "CMakeFiles\\cmTC_ef516.dir/objects.a" --no-whole-archive --out-implib libcmTC_ef516.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o"]
+    arg [C:\\msys64\\mingw64\\bin\\ld] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ef516.exe] ==> ignore
+    arg [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o] ==> ignore
+    arg [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o] ==> ignore
+    arg [-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0] ==> dir [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0]
+    arg [-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib] ==> dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib]
+    arg [-LC:\\msys64\\mingw64\\lib] ==> dir [C:\\msys64\\mingw64\\lib]
+    arg [-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib] ==> dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib]
+    arg [--whole-archive] ==> ignore
+    arg [CMakeFiles\\cmTC_ef516.dir/objects.a] ==> ignore
+    arg [--no-whole-archive] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_ef516.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lgcc_eh] ==> lib [gcc_eh]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o] ==> ignore
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  remove lib [gcc_eh]
+  remove lib [msvcrt]
+  collapse library dir [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0]
+  collapse library dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+  collapse library dir [C:\\msys64\\mingw64\\lib] ==> [C:/msys64/mingw64/lib]
+  collapse library dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/sys-root/mingw/lib]
+  implicit libs: [mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex]
+  implicit dirs: [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0;C:/msys64/mingw64/x86_64-w64-mingw32/lib;C:/msys64/mingw64/lib;C:/msys64/mingw64/x86_64-w64-mingw32/sys-root/mingw/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_0d0b2/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_0d0b2.dir\build.make CMakeFiles/cmTC_0d0b2.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_0d0b2.dir/testCXXCompiler.cxx.obj
+C:\msys64\mingw64\bin\clang++.exe     -o CMakeFiles\cmTC_0d0b2.dir\testCXXCompiler.cxx.obj -c C:\Users\xiaoc\CLionProjects\miyuki.serialize\cmake-build-debug\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+Linking CXX executable cmTC_0d0b2.exe
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_0d0b2.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_0d0b2.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_0d0b2.dir/objects.a @CMakeFiles\cmTC_0d0b2.dir\objects1.rsp
+C:\msys64\mingw64\bin\clang++.exe      -Wl,--whole-archive CMakeFiles\cmTC_0d0b2.dir/objects.a -Wl,--no-whole-archive  -o cmTC_0d0b2.exe -Wl,--out-implib,libcmTC_0d0b2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_0d0b2.dir\linklibs.rsp
+mingw32-make.exe[1]: Leaving directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_794c9/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_794c9.dir\build.make CMakeFiles/cmTC_794c9.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_794c9.dir/CMakeCXXCompilerABI.cpp.obj
+C:\msys64\mingw64\bin\clang++.exe    -v -o CMakeFiles\cmTC_794c9.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp"
+clang version 8.0.0 (tags/RELEASE_800/final)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:\msys64\mingw64\bin
+ "C:\\msys64\\mingw64\\bin\\clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -momit-leaf-frame-pointer -v -coverage-notes-file "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp\\CMakeFiles\\cmTC_794c9.dir\\CMakeCXXCompilerABI.cpp.gcno" -resource-dir "C:\\msys64\\mingw64\\lib\\clang\\8.0.0" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\backward" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0\\backward" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0\\backward" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\backward" -internal-isystem "C:\\msys64\\mingw64\\lib\\clang\\8.0.0\\include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include" -internal-isystem "C:\\msys64\\mingw64\\include" -fdeprecated-macro -fdebug-compilation-dir "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fno-use-cxa-atexit -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fseh-exceptions -fdiagnostics-show-option -o "CMakeFiles\\cmTC_794c9.dir\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\Program Files\\JetBrains\\CLion 2019.2.5\\bin\\cmake\\win\\share\\cmake-3.15\\Modules\\CMakeCXXCompilerABI.cpp" -faddrsig
+clang -cc1 version 8.0.0 based upon LLVM 8.0.0 default target x86_64-w64-windows-gnu
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\x86_64-w64-mingw32"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\backward"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0\x86_64-w64-mingw32"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0\backward"
+ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++"
+ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\x86_64-w64-mingw32"
+ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\backward"
+ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32/sys-root/mingw/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ C:\msys64\mingw64\include\c++\8.3.0
+ C:\msys64\mingw64\include\c++\8.3.0\x86_64-w64-mingw32
+ C:\msys64\mingw64\include\c++\8.3.0\backward
+ C:\msys64\mingw64\lib\clang\8.0.0\include
+ C:\msys64\mingw64\x86_64-w64-mingw32\include
+ C:\msys64\mingw64\include
+End of search list.
+Linking CXX executable cmTC_794c9.exe
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_794c9.dir\link.txt --verbose=1
+"C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_794c9.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_794c9.dir/objects.a @CMakeFiles\cmTC_794c9.dir\objects1.rsp
+C:\msys64\mingw64\bin\clang++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_794c9.dir/objects.a -Wl,--no-whole-archive  -o cmTC_794c9.exe -Wl,--out-implib,libcmTC_794c9.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
+clang version 8.0.0 (tags/RELEASE_800/final)
+Target: x86_64-w64-windows-gnu
+Thread model: posix
+InstalledDir: C:\msys64\mingw64\bin
+ "C:\\msys64\\mingw64\\bin\\ld" -m i386pep -Bdynamic -o cmTC_794c9.exe "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o" "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o" "-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib" "-LC:\\msys64\\mingw64\\lib" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib" --whole-archive "CMakeFiles\\cmTC_794c9.dir/objects.a" --no-whole-archive --out-implib libcmTC_794c9.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o"
+mingw32-make.exe[1]: Leaving directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [C:/msys64/mingw64/include/c++/8.3.0]
+    add: [C:/msys64/mingw64/include/c++/8.3.0/x86_64-w64-mingw32]
+    add: [C:/msys64/mingw64/include/c++/8.3.0/backward]
+    add: [C:/msys64/mingw64/lib/clang/8.0.0/include]
+    add: [C:/msys64/mingw64/x86_64-w64-mingw32/include]
+    add: [C:/msys64/mingw64/include]
+  end of search list found
+  collapse include dir [C:/msys64/mingw64/include/c++/8.3.0] ==> [C:/msys64/mingw64/include/c++/8.3.0]
+  collapse include dir [C:/msys64/mingw64/include/c++/8.3.0/x86_64-w64-mingw32] ==> [C:/msys64/mingw64/include/c++/8.3.0/x86_64-w64-mingw32]
+  collapse include dir [C:/msys64/mingw64/include/c++/8.3.0/backward] ==> [C:/msys64/mingw64/include/c++/8.3.0/backward]
+  collapse include dir [C:/msys64/mingw64/lib/clang/8.0.0/include] ==> [C:/msys64/mingw64/lib/clang/8.0.0/include]
+  collapse include dir [C:/msys64/mingw64/x86_64-w64-mingw32/include] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/include]
+  collapse include dir [C:/msys64/mingw64/include] ==> [C:/msys64/mingw64/include]
+  implicit include dirs: [C:/msys64/mingw64/include/c++/8.3.0;C:/msys64/mingw64/include/c++/8.3.0/x86_64-w64-mingw32;C:/msys64/mingw64/include/c++/8.3.0/backward;C:/msys64/mingw64/lib/clang/8.0.0/include;C:/msys64/mingw64/x86_64-w64-mingw32/include;C:/msys64/mingw64/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe cmTC_794c9/fast && C:/msys64/mingw64/bin/mingw32-make.exe -f CMakeFiles\cmTC_794c9.dir\build.make CMakeFiles/cmTC_794c9.dir/build]
+  ignore line: [mingw32-make.exe[1]: Entering directory 'C:/Users/xiaoc/CLionProjects/miyuki.serialize/cmake-build-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_794c9.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [C:\msys64\mingw64\bin\clang++.exe    -v -o CMakeFiles\cmTC_794c9.dir\CMakeCXXCompilerABI.cpp.obj -c "C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\share\cmake-3.15\Modules\CMakeCXXCompilerABI.cpp"]
+  ignore line: [clang version 8.0.0 (tags/RELEASE_800/final)]
+  ignore line: [Target: x86_64-w64-windows-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:\msys64\mingw64\bin]
+  ignore line: [ "C:\\msys64\\mingw64\\bin\\clang++.exe" -cc1 -triple x86_64-w64-windows-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -fmath-errno -masm-verbose -mconstructor-aliases -munwind-tables -target-cpu x86-64 -dwarf-column-info -debugger-tuning=gdb -momit-leaf-frame-pointer -v -coverage-notes-file "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp\\CMakeFiles\\cmTC_794c9.dir\\CMakeCXXCompilerABI.cpp.gcno" -resource-dir "C:\\msys64\\mingw64\\lib\\clang\\8.0.0" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\backward" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include\\c++\\8.3.0\\backward" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\include\\c++\\8.3.0\\backward" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\x86_64-w64-mingw32" -internal-isystem "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\backward" -internal-isystem "C:\\msys64\\mingw64\\lib\\clang\\8.0.0\\include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/include" -internal-isystem "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\include" -internal-isystem "C:\\msys64\\mingw64\\include" -fdeprecated-macro -fdebug-compilation-dir "C:\\Users\\xiaoc\\CLionProjects\\miyuki.serialize\\cmake-build-debug\\CMakeFiles\\CMakeTmp" -ferror-limit 19 -fmessage-length 0 -fno-use-cxa-atexit -fobjc-runtime=gcc -fcxx-exceptions -fexceptions -fseh-exceptions -fdiagnostics-show-option -o "CMakeFiles\\cmTC_794c9.dir\\CMakeCXXCompilerABI.cpp.obj" -x c++ "C:\\Program Files\\JetBrains\\CLion 2019.2.5\\bin\\cmake\\win\\share\\cmake-3.15\\Modules\\CMakeCXXCompilerABI.cpp" -faddrsig]
+  ignore line: [clang -cc1 version 8.0.0 based upon LLVM 8.0.0 default target x86_64-w64-windows-gnu]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\x86_64-w64-mingw32"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\backward"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0\x86_64-w64-mingw32"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32\include\c++\8.3.0\backward"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\x86_64-w64-mingw32"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\backward"]
+  ignore line: [ignoring nonexistent directory "C:\msys64\mingw64\x86_64-w64-mingw32/sys-root/mingw/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ C:\msys64\mingw64\include\c++\8.3.0]
+  ignore line: [ C:\msys64\mingw64\include\c++\8.3.0\x86_64-w64-mingw32]
+  ignore line: [ C:\msys64\mingw64\include\c++\8.3.0\backward]
+  ignore line: [ C:\msys64\mingw64\lib\clang\8.0.0\include]
+  ignore line: [ C:\msys64\mingw64\x86_64-w64-mingw32\include]
+  ignore line: [ C:\msys64\mingw64\include]
+  ignore line: [End of search list.]
+  ignore line: [Linking CXX executable cmTC_794c9.exe]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_794c9.dir\link.txt --verbose=1]
+  ignore line: ["C:\Program Files\JetBrains\CLion 2019.2.5\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\cmTC_794c9.dir/objects.a]
+  ignore line: [C:\msys64\mingw64\bin\ar.exe cr CMakeFiles\cmTC_794c9.dir/objects.a @CMakeFiles\cmTC_794c9.dir\objects1.rsp]
+  ignore line: [C:\msys64\mingw64\bin\clang++.exe     -v -Wl,--whole-archive CMakeFiles\cmTC_794c9.dir/objects.a -Wl,--no-whole-archive  -o cmTC_794c9.exe -Wl,--out-implib,libcmTC_794c9.dll.a -Wl,--major-image-version,0,--minor-image-version,0 ]
+  ignore line: [clang version 8.0.0 (tags/RELEASE_800/final)]
+  ignore line: [Target: x86_64-w64-windows-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: C:\msys64\mingw64\bin]
+  link line: [ "C:\\msys64\\mingw64\\bin\\ld" -m i386pep -Bdynamic -o cmTC_794c9.exe "C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o" "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o" "-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib" "-LC:\\msys64\\mingw64\\lib" "-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib" --whole-archive "CMakeFiles\\cmTC_794c9.dir/objects.a" --no-whole-archive --out-implib libcmTC_794c9.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt "C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o"]
+    arg [C:\\msys64\\mingw64\\bin\\ld] ==> ignore
+    arg [-m] ==> ignore
+    arg [i386pep] ==> ignore
+    arg [-Bdynamic] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_794c9.exe] ==> ignore
+    arg [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib\\crt2.o] ==> ignore
+    arg [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtbegin.o] ==> ignore
+    arg [-LC:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0] ==> dir [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0]
+    arg [-LC:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib] ==> dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib]
+    arg [-LC:\\msys64\\mingw64\\lib] ==> dir [C:\\msys64\\mingw64\\lib]
+    arg [-LC:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib] ==> dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib]
+    arg [--whole-archive] ==> ignore
+    arg [CMakeFiles\\cmTC_794c9.dir/objects.a] ==> ignore
+    arg [--no-whole-archive] ==> ignore
+    arg [--out-implib] ==> ignore
+    arg [libcmTC_794c9.dll.a] ==> ignore
+    arg [--major-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [--minor-image-version] ==> ignore
+    arg [0] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-ladvapi32] ==> lib [advapi32]
+    arg [-lshell32] ==> lib [shell32]
+    arg [-luser32] ==> lib [user32]
+    arg [-lkernel32] ==> lib [kernel32]
+    arg [-lmingw32] ==> lib [mingw32]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lmoldname] ==> lib [moldname]
+    arg [-lmingwex] ==> lib [mingwex]
+    arg [-lmsvcrt] ==> lib [msvcrt]
+    arg [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\crtend.o] ==> ignore
+  remove lib [msvcrt]
+  remove lib [msvcrt]
+  collapse library dir [C:\\msys64\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0] ==> [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0]
+  collapse library dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32\\lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/lib]
+  collapse library dir [C:\\msys64\\mingw64\\lib] ==> [C:/msys64/mingw64/lib]
+  collapse library dir [C:\\msys64\\mingw64\\x86_64-w64-mingw32/sys-root/mingw/lib] ==> [C:/msys64/mingw64/x86_64-w64-mingw32/sys-root/mingw/lib]
+  implicit libs: [stdc++;mingw32;gcc_s;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex]
+  implicit dirs: [C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.3.0;C:/msys64/mingw64/x86_64-w64-mingw32/lib;C:/msys64/mingw64/lib;C:/msys64/mingw64/x86_64-w64-mingw32/sys-root/mingw/lib]
+  implicit fwks: []
+
+
