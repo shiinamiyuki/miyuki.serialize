@@ -543,8 +543,8 @@ namespace miyuki::serialize {
             Serializable *_create() override {                                                                                                  \
                 return new Class();                                                                                                             \
             }                                                                                                                                   \
-            void save(const Serializable &self, OutputArchive &ar)override{static_cast<const Class&>(self).save(ar);}                                   \
-            void load(Serializable &self, InputArchive &ar)override{static_cast<Class&>(self).load(ar);}                                                \
+            void save(const Serializable &self, OutputArchive &ar)override{static_cast<const Class&>(self).save(ar);}                           \
+            void load(Serializable &self, InputArchive &ar)override{static_cast<Class&>(self).load(ar);}                                        \
         };                                                                                                                                      \
         static T t;                                                                                                                             \
         return &t;                                                                                                                              \
