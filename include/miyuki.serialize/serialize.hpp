@@ -70,6 +70,8 @@ namespace miyuki::serialize {
         void load(Archive &) {}
 
         [[nodiscard]] virtual Type *getType() const = 0;
+
+        virtual ~Serializable()= default;
     };
 
 
@@ -281,7 +283,7 @@ namespace miyuki::serialize {
         template<class T>
         std::enable_if_t<std::is_base_of_v<Serializable, T> && detail::has_member_save<T>::value, void>
         _save(const std::shared_ptr<T> &ptr) {
-            static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
+            //static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
             if (!ptr)return;
             auto *raw = static_cast<Serializable *>(ptr.get());
             auto it = ptrs.find(raw);
@@ -307,7 +309,6 @@ namespace miyuki::serialize {
         template<class T>
         std::enable_if_t<std::is_base_of_v<Serializable, T> && detail::has_member_save<T>::value, void>
         _save(const std::vector<std::shared_ptr<T>> &vec) {
-            static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
             json::json arr = json::json::array();
             for (const auto &i :vec) {
                 arr.emplace_back();
@@ -425,14 +426,13 @@ namespace miyuki::serialize {
                 _popNode();
             } else {
                 auto addr = std::stol(_top().at("addr").get<std::string>());
-                ptr =  std::dynamic_pointer_cast<T> (ptrs[addr]);
+                ptr = std::dynamic_pointer_cast<T>(ptrs[addr]);
             }
         }
 
         template<class T>
         std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
         _load(std::vector<std::shared_ptr<T>> &vec) {
-            static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
             for (int i = 0; i < _top().size(); i++) {
                 _makeNode(_top().at(i));
                 _load(vec[i]);
@@ -443,7 +443,6 @@ namespace miyuki::serialize {
         template<class T>
         std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
         _load(std::unordered_map<std::string, std::shared_ptr<T>> &map) {
-            static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
             for (auto &el : _top().items()) {
                 _makeNode(el.value());
                 map[el.key()] = nullptr;
@@ -454,9 +453,11 @@ namespace miyuki::serialize {
 
         template<class T>
         void _load_nvp(const char *name, T &value) {
-            _makeNode(_top()[name]);
-            _load(value);
-            _popNode();
+            if (_top().contains(name)) {
+                _makeNode(_top()[name]);
+                _load(value);
+                _popNode();
+            }
         }
 
         template<class T>
@@ -543,8 +544,8 @@ namespace miyuki::serialize {
             Serializable *_create() override {                                                                                                  \
                 return new Class();                                                                                                             \
             }                                                                                                                                   \
-            void save(const Serializable &self, OutputArchive &ar)override{static_cast<const Class&>(self).save(ar);}                           \
-            void load(Serializable &self, InputArchive &ar)override{static_cast<Class&>(self).load(ar);}                                        \
+            void save(const Serializable &self, miyuki::serialize::OutputArchive &ar)override{static_cast<const Class&>(self).save(ar);}                           \
+            void load(Serializable &self, miyuki::serialize::InputArchive &ar)override{static_cast<Class&>(self).load(ar);}                                        \
         };                                                                                                                                      \
         static T t;                                                                                                                             \
         return &t;                                                                                                                              \
