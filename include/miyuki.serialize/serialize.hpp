@@ -46,6 +46,10 @@ namespace miyuki::serialize {
         using std::runtime_error::runtime_error;
     };
 
+    class SerializationError : public std::runtime_error {
+    public:
+        using std::runtime_error::runtime_error;
+    };
 
     // Base class needed for serializing polymorphic classes
     class Serializable {
@@ -71,7 +75,7 @@ namespace miyuki::serialize {
 
         [[nodiscard]] virtual Type *getType() const = 0;
 
-        virtual ~Serializable()= default;
+        virtual ~Serializable() = default;
     };
 
 
@@ -157,7 +161,6 @@ namespace miyuki::serialize {
             static const bool value = !std::is_same_v<No, decltype(test<T>(0))>;
         };
 
-
     }
 
     class Context {
@@ -219,14 +222,36 @@ namespace miyuki::serialize {
         return NVP_NC<T>(name, arg);
     }
 
+    struct ArchiveBase {
+        std::vector<std::string> locator;
 
-    class OutputArchive {
+        template<class F, class... Args>
+        void tryInvoke(F &&f, Args &&... args) {
+            try {
+                f(std::forward<Args>(args)...);
+            }
+            catch (serialize::SerializationError &e) {
+                throw e;
+            }
+            catch (std::exception &e) {
+                std::string msg;
+                for (auto &i:locator) {
+                    msg.append(i);
+                }
+                throw SerializationError(std::string("error: ").append(e.what()).append(" in ").append(msg));
+            }
+        }
+    };
+
+    class OutputArchive : public ArchiveBase {
         Context &context;
         std::vector<std::reference_wrapper<json::json>> stack;
         std::unordered_map<Serializable *, std::reference_wrapper<json::json>> ptrs;
         std::vector<int> counter;
         json::json data;
+
     public:
+
         [[nodiscard]] json::json getData() const {
             return data;
         }
@@ -253,7 +278,9 @@ namespace miyuki::serialize {
         void _save_nvp(const char *name, const T &value) {
             _top()[name] = json::json();
             _makeNode(_top()[name]);
+            locator.emplace_back(std::string("/").append(name));
             _save(value);
+            locator.pop_back();
             _popNode();
         }
 
@@ -261,7 +288,9 @@ namespace miyuki::serialize {
         void _save_nvp(const std::string &name, const T &value) {
             _top()[name] = json::json();
             _makeNode(_top()[name]);
+            locator.emplace_back(std::string("/").append(name));
             _save(value);
+            locator.pop_back();
             _popNode();
         }
 
@@ -310,12 +339,16 @@ namespace miyuki::serialize {
         std::enable_if_t<std::is_base_of_v<Serializable, T> && detail::has_member_save<T>::value, void>
         _save(const std::vector<std::shared_ptr<T>> &vec) {
             _top() = json::json::array();
-            auto & arr = _top();
+            auto &arr = _top();
+            auto cnt = 0;
             for (const auto &i :vec) {
                 arr.emplace_back();
                 _makeNode(arr.back());
+                locator.emplace_back(std::string("/").append(std::to_string(cnt)));
                 _save(i);
+                locator.pop_back();
                 _popNode();
+                cnt++;
             }
         }
 
@@ -324,11 +357,13 @@ namespace miyuki::serialize {
         _save(const std::unordered_map<std::string, std::shared_ptr<T>> &map) {
             static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
             _top() = json::json::object();
-            auto&dict = _top();
+            auto &dict = _top();
             for (const auto &i :map) {
                 dict[i.first] = json::json();
                 _makeNode(dict[i.first]);
+                locator.emplace_back(std::string("/").append(i.first));
                 _save(i.second);
+                locator.pop_back();
                 _popNode();
             }
         }
@@ -366,13 +401,15 @@ namespace miyuki::serialize {
 
     };
 
-    class InputArchive {
+    class InputArchive : public ArchiveBase {
         Context &context;
         const json::json &data;
         std::vector<std::reference_wrapper<const json::json>> stack;
         std::unordered_map<size_t, std::shared_ptr<Serializable>> ptrs;
         std::vector<int> counter;
+
     public:
+
         const json::json &_top() { return stack.back(); }
 
         void _makeNode(const json::json &ref) {
@@ -436,8 +473,10 @@ namespace miyuki::serialize {
         _load(std::vector<std::shared_ptr<T>> &vec) {
             for (int i = 0; i < _top().size(); i++) {
                 _makeNode(_top().at(i));
+                locator.emplace_back(std::string("/").append(std::to_string(i)));
                 vec.emplace_back();
                 _load(vec.back());
+                locator.pop_back();
                 _popNode();
             }
         }
@@ -447,8 +486,10 @@ namespace miyuki::serialize {
         _load(std::unordered_map<std::string, std::shared_ptr<T>> &map) {
             for (auto &el : _top().items()) {
                 _makeNode(el.value());
+                locator.emplace_back(std::string("/").append(el.key()));
                 map[el.key()] = nullptr;
                 _load(map[el.key()]);
+                locator.pop_back();
                 _popNode();
             }
         }
@@ -457,16 +498,22 @@ namespace miyuki::serialize {
         void _load_nvp(const char *name, T &value) {
             if (_top().contains(name)) {
                 _makeNode(_top()[name]);
+                locator.emplace_back(std::string("/").append(name));
                 _load(value);
+                locator.pop_back();
                 _popNode();
             }
         }
 
         template<class T>
         void _load_nvp(const std::string &name, T &value) {
-            _makeNode(_top()[name]);
-            _load(value);
-            _popNode();
+            if (_top().contains(name)) {
+                _makeNode(_top()[name]);
+                locator.emplace_back(std::string("/").append(name));
+                _load(value);
+                locator.pop_back();
+                _popNode();
+            }
         }
 
         template<class T>
@@ -522,7 +569,9 @@ namespace miyuki::serialize {
     template<class T>
     json::json toJson(Context &context, const T &data) {
         OutputArchive ar(context);
-        ar._save(data);
+        ar.tryInvoke([&]() {
+            ar._save(data);
+        });
         return ar.getData();
     }
 
@@ -530,7 +579,9 @@ namespace miyuki::serialize {
     T fromJson(Context &context, const json::json &j) {
         InputArchive ar(context, j);
         T data;
-        ar._load(data);
+        ar.tryInvoke([&]() {
+            ar._load(data);
+        });
         return data;
     }
 

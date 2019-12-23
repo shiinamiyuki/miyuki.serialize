@@ -57,7 +57,9 @@ int main() {
     }
     auto j = toJson(context, foo);
     std::cout << j.dump() << std::endl;
+    j = json::json::parse(R"({"a":2,"b":3,"bar":{"addr":"8994096","props":{"a":0,"b":0,"c":4}},"bar2":{"addr":"8994096","type":"Bar"},"c":4,"vec":[{"addr":"8994096","type":"Bar"},{"addr":"8994096","type":"Bar"},{"addr":"8994096","type":"Bar"}]})");
+
     foo = fromJson<Foo>(context, j);
-    j = toJson(context, foo);
+
     std::cout << j.dump() << std::endl;
 }
