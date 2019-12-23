@@ -38,7 +38,8 @@ struct Foo {
     int a, b, c;
     std::shared_ptr<Bar> bar;
     std::shared_ptr<Bar> bar2;
-    MYK_SER(a, b, c, bar, bar2)
+    std::vector<std::shared_ptr<Bar>> vec;
+    MYK_SER(a, b, c, bar, bar2, vec)
 };
 
 int main() {
@@ -48,8 +49,12 @@ int main() {
     foo.a = 2;
     foo.b = 3;
     foo.c = 4;
+
     foo.bar = std::make_shared<Bar>();
     foo.bar2 = foo.bar;
+    for(int i =0;i<3;i++){
+        foo.vec.push_back(foo.bar);
+    }
     auto j = toJson(context, foo);
     std::cout << j.dump() << std::endl;
     foo = fromJson<Foo>(context, j);

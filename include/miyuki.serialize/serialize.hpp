@@ -309,7 +309,8 @@ namespace miyuki::serialize {
         template<class T>
         std::enable_if_t<std::is_base_of_v<Serializable, T> && detail::has_member_save<T>::value, void>
         _save(const std::vector<std::shared_ptr<T>> &vec) {
-            json::json arr = json::json::array();
+            _top() = json::json::array();
+            auto & arr = _top();
             for (const auto &i :vec) {
                 arr.emplace_back();
                 _makeNode(arr.back());
@@ -322,7 +323,8 @@ namespace miyuki::serialize {
         std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
         _save(const std::unordered_map<std::string, std::shared_ptr<T>> &map) {
             static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
-            json::json dict = json::json::object();
+            _top() = json::json::object();
+            auto&dict = _top();
             for (const auto &i :map) {
                 dict[i.first] = json::json();
                 _makeNode(dict[i.first]);
@@ -408,7 +410,6 @@ namespace miyuki::serialize {
             auto type_s = _top().at("type").get<std::string>();
             auto type = context.getType(type_s);
             if (_top().contains("props")) {
-
                 if (_top().contains("addr")) {
                     auto addr = std::stol(_top().at("addr").get<std::string>());
                     auto it = ptrs.find(addr);
@@ -426,7 +427,7 @@ namespace miyuki::serialize {
                 _popNode();
             } else {
                 auto addr = std::stol(_top().at("addr").get<std::string>());
-                ptr = std::dynamic_pointer_cast<T>(ptrs[addr]);
+                ptr = std::dynamic_pointer_cast<T>(ptrs.at(addr));
             }
         }
 
@@ -435,7 +436,8 @@ namespace miyuki::serialize {
         _load(std::vector<std::shared_ptr<T>> &vec) {
             for (int i = 0; i < _top().size(); i++) {
                 _makeNode(_top().at(i));
-                _load(vec[i]);
+                vec.emplace_back();
+                _load(vec.back());
                 _popNode();
             }
         }
