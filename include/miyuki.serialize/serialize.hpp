@@ -173,6 +173,10 @@ namespace miyuki::serialize {
             types[T::staticType()->name()] = T::staticType();
         }
 
+        void registerTye(Serializable::Type * type){
+            types[type->name()] = type;
+        }
+
         Serializable::Type *getType(const std::string &s) {
             auto it = types.find(s);
             if (it == types.end()) {
