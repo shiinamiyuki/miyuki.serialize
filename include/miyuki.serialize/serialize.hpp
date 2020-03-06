@@ -31,6 +31,7 @@
 #include "reflection-visitor.hpp"
 
 namespace miyuki::serialize {
+#define MYK_EXPORT __declspec(dllexport)
     class NoSuchKeyError : public std::runtime_error {
     public:
         using std::runtime_error::runtime_error;
@@ -52,9 +53,9 @@ namespace miyuki::serialize {
     };
 
     // Base class needed for serializing polymorphic classes
-    class Serializable {
+    class MYK_EXPORT Serializable {
     public:
-        class Type {
+        class MYK_EXPORT Type {
         public:
             [[nodiscard]] virtual const char *name() const = 0;
 
@@ -601,8 +602,8 @@ namespace miyuki::serialize {
             Serializable *_create() override {                                                                                                  \
                 return new Class();                                                                                                             \
             }                                                                                                                                   \
-            void save(const Serializable &self, miyuki::serialize::OutputArchive &ar)override{static_cast<const Class&>(self).save(ar);}                           \
-            void load(Serializable &self, miyuki::serialize::InputArchive &ar)override{static_cast<Class&>(self).load(ar);}                                        \
+            void save(const Serializable &self, miyuki::serialize::OutputArchive &ar)override{dynamic_cast<const Class&>(self).save(ar);}                           \
+            void load(Serializable &self, miyuki::serialize::InputArchive &ar)override{dynamic_cast<Class&>(self).load(ar);}                                        \
         };                                                                                                                                      \
         static T t;                                                                                                                             \
         return &t;                                                                                                                              \
