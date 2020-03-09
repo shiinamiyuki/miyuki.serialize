@@ -178,7 +178,7 @@ namespace miyuki::serialize {
             types[type->name()] = type;
         }
 
-        Serializable::Type *getType(const std::string &s) {
+        virtual Serializable::Type *getType(const std::string &s) {
             auto it = types.find(s);
             if (it == types.end()) {
                 throw NoSuchTypeError(std::string("No such type named ").append(s));
