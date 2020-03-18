@@ -341,8 +341,8 @@ namespace miyuki::serialize {
         }
 
         template<class T>
-        std::enable_if_t<std::is_base_of_v<Serializable, T> && detail::has_member_save<T>::value, void>
-        _save(const std::vector<std::shared_ptr<T>> &vec) {
+        void
+        _save(const std::vector<T> &vec) {
             _top() = json::json::array();
             auto &arr = _top();
             auto cnt = 0;
@@ -358,9 +358,8 @@ namespace miyuki::serialize {
         }
 
         template<class T>
-        std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
-        _save(const std::unordered_map<std::string, std::shared_ptr<T>> &map) {
-            static_assert(detail::check_serializable_static_type<T>::value, "T must have static Type * staticType()");
+        void
+        _save(const std::unordered_map<std::string, T> &map) {
             _top() = json::json::object();
             auto &dict = _top();
             for (const auto &i :map) {
@@ -372,6 +371,7 @@ namespace miyuki::serialize {
                 _popNode();
             }
         }
+
 
         template<class T>
         void _save(const NVP<T> &nvp) {
@@ -474,8 +474,7 @@ namespace miyuki::serialize {
         }
 
         template<class T>
-        std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
-        _load(std::vector<std::shared_ptr<T>> &vec) {
+        void _load(std::vector<T> &vec) {
             for (int i = 0; i < _top().size(); i++) {
                 _makeNode(_top().at(i));
                 locator.emplace_back(std::string("/").append(std::to_string(i)));
@@ -487,8 +486,7 @@ namespace miyuki::serialize {
         }
 
         template<class T>
-        std::enable_if_t<std::is_base_of_v<Serializable, T>, void>
-        _load(std::unordered_map<std::string, std::shared_ptr<T>> &map) {
+        void _load(std::unordered_map<std::string, T> &map) {
             for (auto &el : _top().items()) {
                 _makeNode(el.value());
                 locator.emplace_back(std::string("/").append(el.key()));
