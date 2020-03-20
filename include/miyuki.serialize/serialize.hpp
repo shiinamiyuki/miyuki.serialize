@@ -475,7 +475,7 @@ namespace miyuki::serialize {
 
         template<class T>
         void _load(std::vector<T> &vec) {
-            for (int i = 0; i < _top().size(); i++) {
+            for (size_t i = 0; i < _top().size(); i++) {
                 _makeNode(_top().at(i));
                 locator.emplace_back(std::string("/").append(std::to_string(i)));
                 vec.emplace_back();
