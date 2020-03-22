@@ -29,9 +29,20 @@
 #include <stdexcept>
 #include <utility>
 #include "reflection-visitor.hpp"
-
+#if defined _WIN32 || defined __CYGWIN__
+#ifdef __GNUC__
+      #define MYK_EXPORT __attribute__ ((dllexport))
+    #else
+      #define MYK_EXPORT __declspec(dllexport) // Note: actually gcc seems to also supports this syntax.
+    #endif
+#else
+#if __GNUC__ >= 4
+#define MYK_EXPORT __attribute__ ((visibility ("default")))
+#else
+#define MYK_EXPORT
+#endif
+#endif
 namespace miyuki::serialize {
-#define MYK_EXPORT __declspec(dllexport)
     class NoSuchKeyError : public std::runtime_error {
     public:
         using std::runtime_error::runtime_error;
