@@ -267,7 +267,7 @@ namespace miyuki::serialize {
         json::json data;
 
     public:
-
+        Context &getContext(){return context;}
         [[nodiscard]] json::json getData() const {
             return data;
         }
@@ -425,7 +425,7 @@ namespace miyuki::serialize {
         std::vector<int> counter;
 
     public:
-
+        Context& getContext(){return context;}
         const json::json &_top() { return stack.back(); }
 
         void _makeNode(const json::json &ref) {
